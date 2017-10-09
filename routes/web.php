@@ -14,3 +14,14 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+use App\Project;
+use App\Student;
+
+$router->get('/example', function () {
+    $project = Project::find(1);
+    $firstStudent = Student::find('580610612');
+    $secondStudent = Student::find('580610613');
+    $result = $project->students()->saveMany([$firstStudent, $secondStudent]);
+    return $result;
+});
