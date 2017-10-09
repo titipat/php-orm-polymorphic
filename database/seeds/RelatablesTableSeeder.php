@@ -11,6 +11,5 @@ class RelatablesTableSeeder extends Seeder
      */
     public function run()
     {
-
     }
 }
